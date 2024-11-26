@@ -1,0 +1,28 @@
+// CITAS
+typedef struct {
+    int idPaciente;
+    int idMedico;
+    char fechaHora[50];
+} Cita;
+
+Cita citas[MAX_CITAS];
+int totalCitas = 0;
+
+void asignarCita() {
+    printf("ID del paciente: ");
+    scanf("%d", &citas[totalCitas].idPaciente);
+    printf("ID del médico: ");
+    scanf("%d", &citas[totalCitas].idMedico);
+    printf("Fecha y hora: ");
+    scanf("%s", citas[totalCitas].fechaHora);
+    totalCitas++;
+    printf("Cita asignada.\n");
+}
+
+void listarCitas() {
+    printf("Lista de citas:\n");
+    for (int i = 0; i < totalCitas; i++) {
+        printf("Paciente ID: %d, Médico ID: %d, Fecha y hora: %s\n",
+               citas[i].idPaciente, citas[i].idMedico, citas[i].fechaHora);
+    }
+}
