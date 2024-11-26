@@ -1,0 +1,23 @@
+// Menú principal 
+int main() {
+    int opcion;
+    do {
+        printf("\n1. Agregar médico\n2. Listar médicos\n");
+        printf("3. Agregar paciente\n4. Listar pacientes\n");
+        printf("5. Asignar cita\n6. Listar citas\n0. Salir\nOpción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1: agregarMedico(); break;
+            case 2: listarMedicos(); break;
+            case 3: agregarPaciente(); break;
+            case 4: listarPacientes(); break;
+            case 5: asignarCita(); break;
+            case 6: listarCitas(); break;
+            case 0: printf("Adiós.\n"); break;
+            default: printf("Opción no válida.\n");
+        }
+    } while (opcion != 0);
+
+    return 0;
+}
